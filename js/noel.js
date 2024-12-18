@@ -48,15 +48,18 @@ gifts.forEach((gift) => {
     this.classList.add("opened");
     selectedGifts.push(giftId);
     showGiftInfo(giftId);
+    const selectedGift = document.querySelector(`.gift[data-id="${giftId}"]`);
+    selectedGift.classList.add("selected");
+
 
     // Khi đã chọn đủ 2 món quà
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
       // Hiệu ứng rung ring và đổi màu cho các hộp quà đã chọn
-      selectedGifts.forEach((id) => {
-        const selectedGift = document.querySelector(`.gift[data-id="${id}"]`);
-        selectedGift.classList.add("selected");
-      });
+      // selectedGifts.forEach((id) => {
+      //   const selectedGift = document.querySelector(`.gift[data-id="${id}"]`);
+      //   selectedGift.classList.add("selected");
+      // });
 
       // Vô hiệu hóa các hộp quà còn lại
       gifts.forEach((g) => {

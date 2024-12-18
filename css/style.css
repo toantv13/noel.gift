@@ -17,6 +17,8 @@ body, html {
     color: white;
 }
 
+
+
 .login-page .login-container {
     text-align: center;
     padding-top: 20%;
@@ -32,9 +34,29 @@ button {
     background-color: red;
     color: #fff;
     cursor: pointer;
+    width: 150px;
 }
 #error-msg {
     color: yellow;
+}
+
+/* Hiệu ứng rung cho input */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Màu đỏ khi input sai */
+.input-error {
+    border: 2px solid red;
+    background-color: #ffdddd;
 }
 
 
