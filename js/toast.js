@@ -1,6 +1,6 @@
 let currentSound;
-const host = window.location.host;
-const pathHost = host.includes("127") ? "" : "/noel.gift/";
+// const host = window.location.host;
+// const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 function showToast(message, type = "info") {
   const container = document.getElementById("toast-container");
@@ -15,7 +15,7 @@ function showToast(message, type = "info") {
     playCongratulation();
   } else if (type === "error") {
     toast.style.backgroundColor = "#F44336";
-    playFalse();
+    // playFalse();
   } else if (type === "warning") {
     toast.style.backgroundColor = "#FFC107";
     playFalse();

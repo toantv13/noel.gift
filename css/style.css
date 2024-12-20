@@ -52,6 +52,9 @@ input, button {
     border: none;
     font-size: 16px;
 }
+input{
+    position: relative;
+}
 button {
     background-color: red;
     color: #fff;
@@ -65,9 +68,11 @@ button:hover{
     transform: scale(1.1); /* Phóng to nhẹ khi hover */
     color: rgb(243, 243, 122); /* Đổi màu chữ */
 }
-#error-msg {
+/* #error-msg {
+    position: absolute;
     color: yellow;
-}
+    font-size: 15px;
+} */
 
 /* Hiệu ứng rung cho input */
 @keyframes shake {

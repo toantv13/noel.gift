@@ -21,8 +21,7 @@ document.getElementById("login-btn").addEventListener("click", function () {
   } else {
     inputValue.classList.add("input-error"); // Thêm class lỗi để đổi màu input
     inputValue.classList.add("shake"); // Thêm hiệu ứng rung
-    document.getElementById("error-msg").textContent =
-      "Mật khẩu không đúng! Vui lòng thử lại.";
+    showToast("Mật khẩu không đúng! Bé thử lại nha 😁", "error");
     // Xóa hiệu ứng rung sau 1s
     setTimeout(() => {
       inputValue.classList.remove("shake"); // Xóa hiệu ứng rung
