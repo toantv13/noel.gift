@@ -29,7 +29,7 @@ p{
 }
 
 .login-page{
-    background: url('/image/login.jpeg') no-repeat center center/cover;
+    background: url('/Image/login.jpeg') no-repeat center center/cover;
 }
 
 .login-page .login-container {
