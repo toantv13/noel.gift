@@ -1,8 +1,8 @@
 const gifts = document.querySelectorAll(".gift");
 let selectedGifts = [];
 const maxSelection = 2;
-// const host = window.location.host;
-// const pathHost = host.includes("127") ? "" : "/noel.gift/";
+const host = window.location.host;
+const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 const giftData = {
   1: { name: "Gấu bông", image: "image/bear.jpeg" },
