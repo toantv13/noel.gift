@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* background: black; Giảm flash nền trắng khi tải */
+    background: black; /* Giảm flash nền trắng khi tải */
 }
 
 .login-page,
@@ -28,7 +28,7 @@ p{
 }
 
 .login-page{
-    background: url('/assets/login.jpeg') no-repeat center center/cover;
+    background: url('/image/login.jpeg') no-repeat center center/cover;
 }
 
 .login-page .login-container {
