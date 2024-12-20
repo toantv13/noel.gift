@@ -95,7 +95,7 @@ if (window.location.pathname.includes("noel.html")) {
   // Nếu reload trang Noel, chuyển hướng về Login
   if (lastPage === "noel") {
     localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
-    window.location.href = "../index.html"; // Đường dẫn Login Page
+    window.location.href = "/index.html"; // Đường dẫn Login Page
   } else {
     localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
   }
