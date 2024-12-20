@@ -1,5 +1,8 @@
+const host = window.location.host;
+const pathHost = host.includes('127') ? "" : "/noel.gift/";
+
 document.getElementById("login-btn").addEventListener("click", function () {
-    const audio = new Audio("../assets/button.mp3"); // Âm thanh Giáng sinh
+    const audio = new Audio(`${pathHost}assets/button.mp3`); // Âm thanh Giáng sinh
     // Phát âm thanh khi nút "Yes" được nhấn
     audio.play();
     let inputValue = document.getElementById("password");
@@ -17,5 +20,6 @@ document.getElementById("login-btn").addEventListener("click", function () {
         setTimeout(() => {
             inputValue.classList.remove('shake'); // Xóa hiệu ứng rung
         }, 1000); // 1000ms = 1s
+
     }
 });

@@ -1,4 +1,6 @@
 let currentSound;
+const host = window.location.host;
+const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 function showToast(message, type = "info") {
   const container = document.getElementById("toast-container");
@@ -35,7 +37,7 @@ function playCongratulation() {
   if (currentSound) {
     currentSound.pause();
   }
-  const giftSound = new Audio("/noel.gift/assets/votay.mp3");
+  const giftSound = new Audio(`${pathHost}assets/votay.mp3`);
   giftSound.currentTime = 0;
   giftSound.play();
   currentSound = giftSound;
@@ -46,7 +48,7 @@ function playFalse() {
   if (currentSound) {
     currentSound.pause();
   }
-  const giftSound = new Audio("/noel.gift/assets/false.mp3");
+  const giftSound = new Audio(`${pathHost}assets/false.mp3`);
   giftSound.currentTime = 0;
   giftSound.play();
   currentSound = giftSound;

@@ -1,6 +1,8 @@
 const gifts = document.querySelectorAll(".gift");
 let selectedGifts = [];
 const maxSelection = 2;
+// const host = window.location.host;
+// const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 const giftData = {
   1: { name: "Gấu bông", image: "assets/gift1.jpg" },
@@ -91,11 +93,11 @@ function saveGifts(selectedGifts) {
 // Khi load trang Noel
 if (window.location.pathname.includes("noel.html")) {
   const lastPage = localStorage.getItem("lastPage");
-
+  console.log(window.location);
   // Nếu reload trang Noel, chuyển hướng về Login
   if (lastPage === "noel") {
     localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
-    window.location.href = "/noel.gift/index.html"; // Đường dẫn Login Page
+    window.location.href = `${pathHost}/index.html`; // Đường dẫn Login Page
   } else {
     localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
   }
