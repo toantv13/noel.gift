@@ -5,11 +5,16 @@ const maxSelection = 2;
 // const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 const giftData = {
-  1: { name: "Gấu bông", image: "assets/gift1.jpg" },
-  2: { name: "Chúc bé may mắn lần sau", image: "assets/gift2.jpg" },
-  3: { name: "Nhẫn", image: "assets/gift3.jpg" },
-  4: { name: "Vòng tay", image: "assets/gift4.jpg" },
-  5: { name: "1 điều ước", image: "assets/gift5.jpg" },
+  1: { name: "Gấu bông", image: "../image/bear.jpeg" },
+  2: { name: "Chúc bé may mắn lần sau", image: "../image/mayman.jpeg" },
+  3: { name: "Nhẫn", image: "../image/ring.webp" },
+  4: { name: "Vòng tay", image: "../image/vongtay.jpg" },
+  5: { name: "1 điều ước", image: "../image/wish.jpg" },
+  // 1: { name: "Gấu bông", image: `${pathHost}image/bear.jpeg` },
+  // 2: { name: "Chúc bé may mắn lần sau", image: `${pathHost}image/mayman.jpeg` },
+  // 3: { name: "Nhẫn", image: `${pathHost}image/ring.webp` },
+  // 4: { name: "Vòng tay", image: `${pathHost}image/vongtay.jpg` },
+  // 5: { name: "1 điều ước", image: `${pathHost}image/wish.jpg` }
 };
 
 // Hoán đổi vị trí các hộp quà
@@ -53,11 +58,15 @@ gifts.forEach((gift) => {
 
     // Đánh dấu quà
     this.classList.add("opened");
-    this.textContent = giftData[giftId].name; // Thay thế tên quà
+    this.textContent = null; // Thay thế tên quà
     selectedGifts.push(giftId);
     showGiftInfo(giftId);
     const selectedGift = document.querySelector(`.gift[data-id="${giftId}"]`);
     selectedGift.classList.add("selected");
+    let selectedElement = document.querySelector(".selected");
+    selectedElement.style.backgroundImage = `url("${giftData[giftId].image}")`;
+    selectedElement.style.backgroundSize = "cover";
+    selectedElement.style.backgroundPosition = "center";
 
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
@@ -91,19 +100,19 @@ function saveGifts(selectedGifts) {
 }
 
 // Khi load trang Noel
-if (window.location.pathname.includes("noel.html")) {
-  const lastPage = localStorage.getItem("lastPage");
-  console.log(window.location);
-  // Nếu reload trang Noel, chuyển hướng về Login
-  if (lastPage === "noel") {
-    localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
-    window.location.href = `${pathHost}/index.html`; // Đường dẫn Login Page
-  } else {
-    localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
-  }
-}
+// if (window.location.pathname.includes("noel.html")) {
+//   const lastPage = localStorage.getItem("lastPage");
+//   console.log(window.location);
+//   // Nếu reload trang Noel, chuyển hướng về Login
+//   if (lastPage === "noel") {
+//     localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
+//     window.location.href = `${pathHost}/index.html`; // Đường dẫn Login Page
+//   } else {
+//     localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
+//   }
+// }
 
-// Khi ở trang Login
-if (window.location.pathname.includes("index.html")) {
-  localStorage.setItem("lastPage", "login"); // Đặt trạng thái là Login
-}
+// // Khi ở trang Login
+// if (window.location.pathname.includes("index.html")) {
+//   localStorage.setItem("lastPage", "login"); // Đặt trạng thái là Login
+// }
