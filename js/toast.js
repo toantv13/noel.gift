@@ -35,7 +35,7 @@ function playCongratulation() {
   if (currentSound) {
     currentSound.pause();
   }
-  const giftSound = new Audio("assets/votay.mp3");
+  const giftSound = new Audio("noel.gift/assets/votay.mp3");
   giftSound.currentTime = 0;
   giftSound.play();
   currentSound = giftSound;
@@ -46,7 +46,7 @@ function playFalse() {
   if (currentSound) {
     currentSound.pause();
   }
-  const giftSound = new Audio("assets/false.mp3");
+  const giftSound = new Audio("noel.gift/assets/false.mp3");
   giftSound.currentTime = 0;
   giftSound.play();
   currentSound = giftSound;
