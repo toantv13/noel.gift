@@ -101,19 +101,19 @@ function saveGifts(selectedGifts) {
 }
 
 // Khi load trang Noel
-// if (window.location.pathname.includes("noel.html")) {
-//   const lastPage = localStorage.getItem("lastPage");
-//   console.log(window.location);
-//   // Nếu reload trang Noel, chuyển hướng về Login
-//   if (lastPage === "noel") {
-//     localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
-//     window.location.href = `${pathHost}/index.html`; // Đường dẫn Login Page
-//   } else {
-//     localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
-//   }
-// }
+if (window.location.pathname.includes("noel.html")) {
+  const lastPage = localStorage.getItem("lastPage");
+  console.log(window.location);
+  // Nếu reload trang Noel, chuyển hướng về Login
+  if (lastPage === "noel") {
+    localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
+    window.location.href = `${pathHost}/index.html`; // Đường dẫn Login Page
+  } else {
+    localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
+  }
+}
 
-// // Khi ở trang Login
-// if (window.location.pathname.includes("index.html")) {
-//   localStorage.setItem("lastPage", "login"); // Đặt trạng thái là Login
-// }
+// Khi ở trang Login
+if (window.location.pathname.includes("index.html")) {
+  localStorage.setItem("lastPage", "login"); // Đặt trạng thái là Login
+}
