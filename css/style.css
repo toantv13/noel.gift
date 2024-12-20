@@ -38,12 +38,22 @@ p{
 
 .login-page{
     background: url('../image/login.webp') no-repeat center center/cover;
-    
+    /* position: relative; */
+    justify-content: center;
 }
 
 .login-page .login-container {
     text-align: center;
     padding-top: 20%;
+}
+.center-love{
+    position: absolute;
+    top: 50%; /* Đặt ảnh chồng lên ở giữa */
+    left: 50%; /* Đặt ảnh chồng lên ở giữa */
+    transform: translate(-50%, -50%); /* Căn giữa ảnh chính xác */
+    width: 200px; /* Kích thước ảnh chồng lên */
+    height: 250px; /* Kích thước ảnh chồng lên */
+    z-index: 1;
 }
 input, button {
     padding: 10px 20px;
