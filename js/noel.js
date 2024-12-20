@@ -5,16 +5,16 @@ const maxSelection = 2;
 // const pathHost = host.includes("127") ? "" : "/noel.gift/";
 
 const giftData = {
-  1: { name: "Gấu bông", image: "../image/bear.jpeg" },
-  2: { name: "Chúc bé may mắn lần sau", image: "../image/mayman.jpeg" },
-  3: { name: "Nhẫn", image: "../image/ring.webp" },
-  4: { name: "Vòng tay", image: "../image/vongtay.jpg" },
-  5: { name: "1 điều ước", image: "../image/wish.jpg" },
-  // 1: { name: "Gấu bông", image: `${pathHost}image/bear.jpeg` },
-  // 2: { name: "Chúc bé may mắn lần sau", image: `${pathHost}image/mayman.jpeg` },
-  // 3: { name: "Nhẫn", image: `${pathHost}image/ring.webp` },
-  // 4: { name: "Vòng tay", image: `${pathHost}image/vongtay.jpg` },
-  // 5: { name: "1 điều ước", image: `${pathHost}image/wish.jpg` }
+  // 1: { name: "Gấu bông", image: "../image/bear.jpeg" },
+  // 2: { name: "Chúc bé may mắn lần sau", image: "../image/mayman.jpeg" },
+  // 3: { name: "Nhẫn", image: "../image/ring.webp" },
+  // 4: { name: "Vòng tay", image: "../image/vongtay.jpg" },
+  // 5: { name: "1 điều ước", image: "../image/wish.jpg" },
+  1: { name: "Gấu bông", image: `${pathHost}image/bear.jpeg` },
+  2: { name: "Chúc bé may mắn lần sau", image: `${pathHost}image/mayman.jpeg` },
+  3: { name: "Nhẫn", image: `${pathHost}image/ring.webp` },
+  4: { name: "Vòng tay", image: `${pathHost}image/vongtay.jpg` },
+  5: { name: "1 điều ước", image: `${pathHost}image/wish.jpg` },
 };
 
 // Hoán đổi vị trí các hộp quà
