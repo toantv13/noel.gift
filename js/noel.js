@@ -29,6 +29,13 @@ shuffleGifts();
 // Hiển thị thông tin món quà
 function showGiftInfo(id) {
   const gift = giftData[id];
+  const selectedGift = document.querySelector(`.gift[data-id="${id}"]`);
+  selectedGift.classList.add("selected");
+
+  // let selectedElement = document.querySelector(".selected");
+  selectedGift.style.backgroundImage = `url("${pathHost}${gift.image}")`;
+  selectedGift.style.backgroundSize = "cover";
+  selectedGift.style.backgroundPosition = "center";
   showToast(`Bạn đã chọn món quà: ${gift.name}`, "success");
 }
 
@@ -61,12 +68,6 @@ gifts.forEach((gift) => {
     this.textContent = null; // Thay thế tên quà
     selectedGifts.push(giftId);
     showGiftInfo(giftId);
-    const selectedGift = document.querySelector(`.gift[data-id="${giftId}"]`);
-    selectedGift.classList.add("selected");
-    let selectedElement = document.querySelector(".selected");
-    selectedElement.style.backgroundImage = `url("${pathHost}${giftData[giftId].image}")`;
-    selectedElement.style.backgroundSize = "cover";
-    selectedElement.style.backgroundPosition = "center";
 
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
