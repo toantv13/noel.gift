@@ -12,8 +12,6 @@ const giftData = {
 
 // Hiển thị thông tin món quà
 function showGiftInfo(id) {
-  
-
   const gift = giftData[id];
   const giftInfo = document.createElement("div");
   giftInfo.classList.add("gift-info");
@@ -53,7 +51,6 @@ gifts.forEach((gift) => {
     const selectedGift = document.querySelector(`.gift[data-id="${giftId}"]`);
     selectedGift.classList.add("selected");
 
-
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
       // Hiệu ứng rung ring và đổi màu cho các hộp quà đã chọn
@@ -72,9 +69,9 @@ gifts.forEach((gift) => {
 
       // Thông báo sau khi chọn xong
       setTimeout(() => {
-        alert("Bạn đã chọn xong 2 món quà!");
+        alert("Bé iu chọn xong quà rồi chụp gửi anh nha 🥰🥰🥰");
         saveGifts(selectedGifts); // Lưu thông tin quà
-      }, 1500); // Chờ hiệu ứng hoàn tất trước khi thông báo
+      }, 500); // Chờ hiệu ứng hoàn tất trước khi thông báo
     }
   });
 });
@@ -88,15 +85,15 @@ function saveGifts(selectedGifts) {
     .join(", ");
 
   // Tạo file text trong folder "data" (khi sử dụng backend)
-  const blob = new Blob([`Selected Gifts: ${giftDetails}`], {
-    type: "text/plain",
-  });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "selected_gifts.txt";
-  link.click();
+  // const blob = new Blob([`Selected Gifts: ${giftDetails}`], {
+  //   type: "text/plain",
+  // });
+  // const link = document.createElement("a");
+  // link.href = URL.createObjectURL(blob);
+  // link.download = "selected_gifts.txt";
+  // link.click();
 
-  alert("Thông tin quà đã được lưu!");
+  // alert("Thông tin quà đã được lưu!");
 }
 
 // Khi load trang Noel
