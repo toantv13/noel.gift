@@ -1,5 +1,5 @@
 document.getElementById("login-btn").addEventListener("click", function () {
-    const audio = new Audio("/assets/button.mp3"); // Âm thanh Giáng sinh
+    const audio = new Audio("../assets/button.mp3"); // Âm thanh Giáng sinh
     // Phát âm thanh khi nút "Yes" được nhấn
     audio.play();
     let inputValue = document.getElementById("password");
@@ -19,24 +19,3 @@ document.getElementById("login-btn").addEventListener("click", function () {
         }, 1000); // 1000ms = 1s
     }
 });
-
-// // Hàm định dạng ngày từ người dùng nhập vào
-// function formatDate(inputDate) {
-//     // Loại bỏ tất cả ký tự không phải số và dấu gạch nối
-//     let cleanedDate = inputDate.replace(/[^0-9/-]/g, '');
-
-//     // Kiểm tra định dạng và chuyển đổi theo yêu cầu (DD-MM-YYYY hoặc MM-DD-YYYY)
-//     let dateParts;
-//     if (cleanedDate.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)) {
-//         // Nếu người dùng nhập định dạng DD/MM/YYYY
-//         dateParts = cleanedDate.split('/');
-//         return `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
-//     } else if (cleanedDate.match(/^(\d{2})-(\d{2})-(\d{4})$/)) {
-//         // Nếu người dùng nhập định dạng MM-DD-YYYY
-//         dateParts = cleanedDate.split('-');
-//         return `${dateParts[1]}-${dateParts[0]}-${dateParts[2]}`;
-//     } else {
-//         // Trả về giá trị ban đầu nếu không đúng định dạng
-//         return "Định dạng không hợp lệ";
-//     }
-// }

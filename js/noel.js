@@ -4,10 +4,10 @@ const maxSelection = 2;
 
 const giftData = {
   1: { name: "Gấu bông", image: "assets/gift1.jpg" },
-  2: { name: "Bánh Noel", image: "assets/gift2.jpg" },
-  3: { name: "Đồng hồ", image: "assets/gift3.jpg" },
-  4: { name: "Áo len", image: "assets/gift4.jpg" },
-  5: { name: "Đèn trang trí", image: "assets/gift5.jpg" },
+  2: { name: "Chúc bé may mắn lần sau", image: "assets/gift2.jpg" },
+  3: { name: "Nhẫn", image: "assets/gift3.jpg" },
+  4: { name: "Vòng tay", image: "assets/gift4.jpg" },
+  5: { name: "1 điều ước", image: "assets/gift5.jpg" },
 };
 
 // Hoán đổi vị trí các hộp quà
@@ -23,17 +23,6 @@ shuffleGifts();
 function showGiftInfo(id) {
   const gift = giftData[id];
   showToast(`Bạn đã chọn món quà: ${gift.name}`, "success");
-  // const giftInfo = document.createElement("div");
-  // giftInfo.classList.add("gift-info");
-  // giftInfo.innerHTML = `
-  //       <h2>${gift.name}</h2>
-  //       <p>Chúc mừng! Bạn đã chọn món quà này!</p>
-  //   `;
-  // document.body.appendChild(giftInfo);
-
-  // setTimeout(() => {
-  //   document.body.removeChild(giftInfo);
-  // }, 3000);
 }
 
 // Chọn quà và kiểm tra logic
@@ -44,14 +33,17 @@ gifts.forEach((gift) => {
     // Đã chọn đủ quà
     if (selectedGifts.length >= maxSelection) {
       // alert("Bạn đã chọn đủ 2 món quà! Không thể chọn thêm.");
-      showToast("Bạn đã chọn đủ 2 món quà! Không thể chọn thêm.", "warning");
+      showToast(
+        "Bé iu đã chọn đủ 2 món quà! Không thể chọn thêm.\r\n😏😏😏😁",
+        "warning"
+      );
       return;
     }
 
     // Kiểm tra đã chọn quà này chưa
     if (selectedGifts.includes(giftId)) {
       showToast(
-        "Bạn đã chọn món quà này rồi. Vui lòng chọn món quà khác!",
+        "Bé iu đã chọn món quà này rồi. Bé chọn món quà khác!",
         "warning"
       );
       return;
@@ -67,22 +59,11 @@ gifts.forEach((gift) => {
 
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
-      // Hiệu ứng rung ring và đổi màu cho các hộp quà đã chọn
-      // selectedGifts.forEach((id) => {
-      //   const selectedGift = document.querySelector(`.gift[data-id="${id}"]`);
-      //   selectedGift.classList.add("selected");
-      // });
-
-      // Vô hiệu hóa các hộp quà còn lại
-      // gifts.forEach((g) => {
-      //   if (!g.classList.contains("opened")) {
-      //     g.style.pointerEvents = "none"; // Không thể bấm
-      //     g.style.opacity = "0.5"; // Làm mờ hộp chưa chọn
-      //   }
-      // });
-
       // Thông báo sau khi chọn xong
-      showToast("Bé iu chọn xong quà rồi chụp gửi anh nha 🥰🥰🥰", "success");
+      showToast(
+        "Bé iu chọn xong quà rồi chụp gửi anh nha \r\n🥰🥰🥰",
+        "success"
+      );
     }
   });
 });
@@ -96,15 +77,15 @@ function saveGifts(selectedGifts) {
     .join(", ");
 
   // Tạo file text trong folder "data" (khi sử dụng backend)
-  // const blob = new Blob([`Selected Gifts: ${giftDetails}`], {
-  //   type: "text/plain",
-  // });
-  // const link = document.createElement("a");
-  // link.href = URL.createObjectURL(blob);
-  // link.download = "selected_gifts.txt";
-  // link.click();
+  const blob = new Blob([`Selected Gifts: ${giftDetails}`], {
+    type: "text/plain",
+  });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "selected_gifts.txt";
+  link.click();
 
-  // alert("Thông tin quà đã được lưu!");
+  alert("Thông tin quà đã được lưu!");
 }
 
 // Khi load trang Noel
@@ -114,7 +95,7 @@ if (window.location.pathname.includes("noel.html")) {
   // Nếu reload trang Noel, chuyển hướng về Login
   if (lastPage === "noel") {
     localStorage.setItem("lastPage", "login"); // Đặt lại trạng thái
-    window.location.href = "/index.html"; // Đường dẫn Login Page
+    window.location.href = "../index.html"; // Đường dẫn Login Page
   } else {
     localStorage.setItem("lastPage", "noel"); // Lưu trạng thái Noel
   }

@@ -1,3 +1,5 @@
+let currentSound;
+
 function showToast(message, type = "info") {
   const container = document.getElementById("toast-container");
 
@@ -6,9 +8,16 @@ function showToast(message, type = "info") {
   toast.classList.add("toast");
 
   // Đặt màu dựa trên loại thông báo
-  if (type === "success") toast.style.backgroundColor = "#4CAF50";
-  else if (type === "error") toast.style.backgroundColor = "#F44336";
-  else if (type === "warning") toast.style.backgroundColor = "#FFC107";
+  if (type === "success") {
+    toast.style.backgroundColor = "#4CAF50";
+    playCongratulation();
+  } else if (type === "error") {
+    toast.style.backgroundColor = "#F44336";
+    playFalse();
+  } else if (type === "warning") {
+    toast.style.backgroundColor = "#FFC107";
+    playFalse();
+  }
 
   toast.textContent = message;
 
@@ -19,4 +28,26 @@ function showToast(message, type = "info") {
   setTimeout(() => {
     toast.remove();
   }, 3000);
+}
+
+function playCongratulation() {
+  // Nếu có âm thanh đang phát, dừng nó
+  if (currentSound) {
+    currentSound.pause();
+  }
+  const giftSound = new Audio("../assets/votay.mp3");
+  giftSound.currentTime = 0;
+  giftSound.play();
+  currentSound = giftSound;
+}
+
+function playFalse() {
+  // Nếu có âm thanh đang phát, dừng nó
+  if (currentSound) {
+    currentSound.pause();
+  }
+  const giftSound = new Audio("../assets/false.mp3");
+  giftSound.currentTime = 0;
+  giftSound.play();
+  currentSound = giftSound;
 }
