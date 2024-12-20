@@ -16,6 +16,9 @@ body, html {
     text-align: center;
     color: white;
 }
+.home-page{
+    justify-content: center;
+}
 h1{
     color: rgb(16, 230, 20);
     /* font-size: 100px; */
