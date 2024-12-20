@@ -28,7 +28,7 @@ p{
 }
 
 .login-page{
-    background: url('/Image/login.jpeg') no-repeat center center/cover;
+    background: url('../Image/login.webp') no-repeat center center/cover;
     
 }
 
@@ -82,7 +82,7 @@ button:hover{
 
 /* Noel Page */
 .noel-page {
-    background: url('assets/noel-bg.jpg') no-repeat center center/cover;
+    /* background: url('assets/noel-bg.jpg') no-repeat center center/cover; */
     text-align: center;
     padding: 20px;
     color: white;
@@ -117,6 +117,7 @@ button:hover{
 .gift.opened {
     background: green;
     cursor: not-allowed;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .gift-info {
@@ -162,3 +163,48 @@ button:hover{
     color: black; /* Thay đổi màu chữ */
     border: 2px solid #FF4500; /* Đổi viền thành đỏ cam */
 }
+
+
+/* Thông báo hiển thị */
+/* Container cho các thông báo */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Toast notification */
+  .toast {
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 3s ease forwards;
+  }
+  
+  /* Hiệu ứng fade in-out */
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  

@@ -20,5 +20,5 @@ yesBtn.addEventListener("click", () => {
     audio.play();
     setTimeout(() => {
         window.location.href = "noel.html";
-    }, 3000);
+    }, 1000);
 });
