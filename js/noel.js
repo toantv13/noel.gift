@@ -2,22 +2,23 @@ const gifts = document.querySelectorAll(".gift");
 let selectedGifts = [];
 const maxSelection = 2;
 
+const giftData = {
+  1: { name: "Gấu bông", image: "assets/gift1.jpg" },
+  2: { name: "Bánh Noel", image: "assets/gift2.jpg" },
+  3: { name: "Đồng hồ", image: "assets/gift3.jpg" },
+  4: { name: "Áo len", image: "assets/gift4.jpg" },
+  5: { name: "Đèn trang trí", image: "assets/gift5.jpg" },
+};
+
 // Hiển thị thông tin món quà
 function showGiftInfo(id) {
-  const giftData = {
-    1: { name: "Gấu bông", image: "assets/gift1.jpg" },
-    2: { name: "Bánh Noel", image: "assets/gift2.jpg" },
-    3: { name: "Đồng hồ", image: "assets/gift3.jpg" },
-    4: { name: "Áo len", image: "assets/gift4.jpg" },
-    5: { name: "Đèn trang trí", image: "assets/gift5.jpg" },
-  };
+  
 
   const gift = giftData[id];
   const giftInfo = document.createElement("div");
   giftInfo.classList.add("gift-info");
   giftInfo.innerHTML = `
         <h2>${gift.name}</h2>
-        <img src="${gift.image}" alt="${gift.name}" style="width: 100%; border-radius: 10px;">
         <p>Chúc mừng! Bạn đã chọn món quà này!</p>
     `;
   document.body.appendChild(giftInfo);
@@ -46,13 +47,13 @@ gifts.forEach((gift) => {
 
     // Đánh dấu quà
     this.classList.add("opened");
+    this.textContent = giftData[giftId].name; // Thay thế tên quà
     selectedGifts.push(giftId);
     showGiftInfo(giftId);
     const selectedGift = document.querySelector(`.gift[data-id="${giftId}"]`);
     selectedGift.classList.add("selected");
 
 
-    // Khi đã chọn đủ 2 món quà
     // Khi đã chọn đủ 2 món quà
     if (selectedGifts.length === maxSelection) {
       // Hiệu ứng rung ring và đổi màu cho các hộp quà đã chọn
@@ -62,12 +63,12 @@ gifts.forEach((gift) => {
       // });
 
       // Vô hiệu hóa các hộp quà còn lại
-      gifts.forEach((g) => {
-        if (!g.classList.contains("opened")) {
-          g.style.pointerEvents = "none"; // Không thể bấm
-          g.style.opacity = "0.5"; // Làm mờ hộp chưa chọn
-        }
-      });
+      // gifts.forEach((g) => {
+      //   if (!g.classList.contains("opened")) {
+      //     g.style.pointerEvents = "none"; // Không thể bấm
+      //     g.style.opacity = "0.5"; // Làm mờ hộp chưa chọn
+      //   }
+      // });
 
       // Thông báo sau khi chọn xong
       setTimeout(() => {
