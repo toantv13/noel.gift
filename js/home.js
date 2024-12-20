@@ -1,7 +1,8 @@
 const noBtn = document.getElementById("no-btn");
 const yesBtn = document.getElementById("yes-btn");
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener("click", () => {
+  playButton();
   // Lấy kích thước của button
   const btnWidth = noBtn.offsetWidth;
   const btnHeight = noBtn.offsetHeight;
